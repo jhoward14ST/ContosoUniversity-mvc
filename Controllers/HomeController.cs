@@ -1,4 +1,9 @@
-﻿using ContosoUniversity.Models;
+﻿// howarj9 - mvc3
+using Microsoft.EntityFrameworkCore;
+using ContosoUniversity.Data;
+using ContosoUniversity.Models.SchoolViewModels;
+using Microsoft.Extensions.Logging;
+using ContosoUniversity.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +12,12 @@ namespace ContosoUniversity.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly SchoolContext _context;
+        
+        public HomeController(ILogger<HomeController> logger, SchoolContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
