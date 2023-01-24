@@ -7,7 +7,7 @@ namespace ContosoUniversity.Models
     // howarj9 - mvc1
     public class Course
     {
-        // howarj9 - mv5
+        // howarj9 - mvc5
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name = "Number")]
         public int CourseID { get; set; }
