@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
+// howarj9 - mvc5
 namespace ContosoUniversity.Models
 {
     // howarj9 - mvc1
