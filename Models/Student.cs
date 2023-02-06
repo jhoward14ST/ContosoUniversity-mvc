@@ -6,30 +6,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ContosoUniversity.Models
 {
     // howarj9 - mvc1
-    public class Student
+    public class Student : Person
     {
-        // howarj9 - mvc5
-        public int ID { get; set; }
-        [Required]
-        [StringLength(50)]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
-        [StringLength(50)]
-        [Column("FirstName")]
-        [Display(Name = "First Name")]
-        public string FirstMidName { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        /* howarj9 - mvc9 
+         Added : Person so that Student is derived from that class and removed reduntant statements */
         [Display(Name = "Enrollment Date")]
         public DateTime EnrollmentDate { get; set; }
-        [Display(Name = "Full Name")]
-        public string FullName
-        {
-            get
-            {
-                return LastName + ", " + FirstMidName;
-            }
-        }
+
         public ICollection<Enrollment> Enrollments { get; set; }
     }
 }
