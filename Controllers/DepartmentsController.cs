@@ -33,8 +33,10 @@ namespace ContosoUniversity.Controllers
             {
                 return NotFound();
             }
-
+            /* howarj9 - mvc10 */
+            string query = "SELECT * FROM Department WHERE DepartmentID = {0}";
             var department = await _context.Departments
+                .FromSqlRaw(query, id)
                 .Include(d => d.Administrator)
                 .FirstOrDefaultAsync(m => m.DepartmentID == id);
             if (department == null)
